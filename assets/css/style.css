@@ -1,0 +1,83 @@
+body {
+    background-color: #121212;
+    color: #ccc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.translator-box {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    width: 320px;
+    color: #ccc;
+}
+
+select.form-select,
+textarea.form-control {
+    background-color: #222;
+    border: none;
+    color: #ccc;
+}
+
+select.form-select:focus,
+textarea.form-control:focus {
+    background-color: #222;
+    color: #ccc;
+    box-shadow: none;
+}
+
+textarea.form-control::placeholder {
+    color: #555;
+}
+
+.swap-btn {
+    background-color: #333;
+    border: none;
+    color: #ccc;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.swap-btn:hover {
+    background-color: #555;
+}
+
+#result {
+    width: 730px;
+    background-color: #333 !important;
+    color: #ccc;
+    border-radius: 7px;
+}
+#result ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+#result li{
+    padding: 10px 20px;
+    display: flex !important;
+    justify-content: space-between;
+    border-bottom: 1px dashed #555;
+    border-radius: 7px;
+}
+#result li:last-child{
+    border-bottom: none;
+}
+#result li:hover{
+    background-color: #555;
+}
+#result li p{
+    padding: 0;
+    margin: 0;
+}
