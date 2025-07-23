@@ -7,8 +7,11 @@ $requests = explode('/', $request);
 $first = $requests[0];
 
 $routes = [
-    '' => 'templates/translate.php',
+    '' => 'templates/register.php',
+    'register' => 'templates/register.php',
+    'login' => 'templates/login.php',
     'translate' => 'templates/translate.php',
+    'logout' => 'templates/logout.php'
 ];
 
 if (isset($routes[$first])) {

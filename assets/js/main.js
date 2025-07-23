@@ -15,11 +15,11 @@ $(document).ready(function () {
                 success: function (response) {
                     $('#result').html(response)
                 },
-                error: function () { }
+                error: function () {
+                }
             });
         } else {
             $('#result').html('');
-            $('#translateinput').html('');
         }
     });
     $('.swap-btn').click(function () {
@@ -31,5 +31,53 @@ $(document).ready(function () {
         var val22 = $('#translateinput').val();
         $('#wordinput').val(val22);
         $('#translateinput').val(val11);
+    });
+    $('#login').submit(function (e) {
+        e.preventDefault();
+        $email = $('#email').val();
+        $pass = $('#pass').val();
+        $.ajax({
+            url: 'handle.php',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                emaillog: $email,
+                passlog: $pass
+            },
+            success: function (response) {
+                $('#result').html(response);
+                setTimeout(function () {
+                    window.location.href = 'translate.php';
+                }, 3000);
+            },
+            error: function () {
+            }
+        });
+    });
+    $('#register').submit(function (e) {
+        e.preventDefault();
+        $name = $('#name').val();
+        $pass = $('#pass').val();
+        $email = $('#email').val();
+        $pass2 = $('#pass2').val();
+        $.ajax({
+            url: 'handle.php',
+            type: 'POST',
+            dataType: "json",
+            data: {
+                name: $name,
+                email: $email,
+                pass: $pass,
+                pass2: $pass2
+            },
+            success: function (response) {
+                $('#result').html(response);
+                setTimeout(function () {
+                    window.location.href = 'translate.php';
+                }, 3000);
+            },
+            error: function () {
+            }
+        });
     });
 });
